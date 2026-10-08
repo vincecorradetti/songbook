@@ -9,9 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Scrapbook() {
-  return (
-    <>
-      <Scrapbock />
-    </>
-  );
+  return <Scrapbock />;
 }

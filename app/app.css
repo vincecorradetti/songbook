@@ -2,15 +2,37 @@
   --clr-white: #fcfcfb;
   --clr-black: #151515;
   --clr-grey: #f0f0ef;
+  --clr-brown: #1a120f;
+  --clr-cream: #f0a888;
+  --clr-lime: #e7eb90;
+  --ff-display: "Chango", sans-serif;
+  --ff-text: "Nunito", sans-serif;
+  --br-sm: 10px;
+  --br-md: 20px;
+  --br-lg: 30px;
 }
 
 body {
-  font-family: sans-serif;
-  color: var(--clr-black);
-  background-color: var(--clr-white);
+  font-family: var(--ff-text);
+  color: var(--clr-lime);
+  background-color: var(--clr-brown);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-display);
 }
