@@ -1,11 +1,11 @@
 import "./Navigation.css";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 export default function Navigation() {
   return (
     <nav className="navigation--main">
-      <Link to="/">Home</Link>
-      <Link to="/scrapbook">Scrapbook</Link>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/scrapbook">Scrapbook</NavLink>
     </nav>
   );
 }

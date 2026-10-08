@@ -10,12 +10,29 @@
   --br-sm: 10px;
   --br-md: 20px;
   --br-lg: 30px;
+  --spacer-1: 0.25rem;
+  --spacer-2: 0.5rem;
+  --spacer-3: 0.75rem;
+  --spacer-4: 1rem;
+  --spacer-5: 1.25rem;
+  --spacer-6: 1.5rem;
+  --spacer-7: 1.75rem;
+  --spacer-8: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  padding: 3rem;
   font-family: var(--ff-text);
+  font-size: 1.25rem;
   color: var(--clr-lime);
   background-color: var(--clr-brown);
+  background: center / contain repeat url("/grunge-background.png")
+    var(--clr-brown);
 }
 
 a {
@@ -34,5 +51,6 @@ h3,
 h4,
 h5,
 h6 {
+  margin-bottom: var(--spacer-4);
   font-family: var(--ff-display);
 }

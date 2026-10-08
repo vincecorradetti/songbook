@@ -17,10 +17,12 @@ async function fetchSearchResults(searchTerm: string): Promise<SearchResult> {
 
 function transformSearchResults(searchResult: SearchResult) {
   const songs = searchResult.results;
-  return songs.map((song) => ({
-    ...song,
-    artworkUrl500: song.artworkUrl100.replace("100x100", "500x500"),
-  })).reverse();
+  return songs
+    .map((song) => ({
+      ...song,
+      artworkUrl500: song.artworkUrl100.replace("100x100", "500x500"),
+    }))
+    .reverse();
 }
 
 /* We could potentially optimize `queryFn` with `select` option
