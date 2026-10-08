@@ -9,20 +9,15 @@ type SearchResult = {
 async function fetchSearchResults(searchTerm: string): Promise<SearchResult> {
   const url = `https://itunes.apple.com/search?term=${searchTerm}&media=music`;
   const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Couldn't fetch songs");
-  }
+  if (!response.ok) throw new Error("Couldn't fetch songs");
   return response.json();
 }
 
-function transformSearchResults(searchResult: SearchResult) {
-  const songs = searchResult.results;
-  return songs
-    .map((song) => ({
-      ...song,
-      artworkUrl500: song.artworkUrl100.replace("100x100", "500x500"),
-    }))
-    .reverse();
+function transformSearchResults({ results }: SearchResult) {
+  return results.map((song) => ({
+    ...song,
+    artworkUrl500: song.artworkUrl100.replace("100x100", "500x500"),
+  }));
 }
 
 /* We could potentially optimize `queryFn` with `select` option
@@ -31,7 +26,7 @@ function transformSearchResults(searchResult: SearchResult) {
  */
 export default function useSongQuery(searchTerm: string) {
   const { data, isSuccess } = useQuery({
-    queryKey: ["songData"],
+    queryKey: ["songs", searchTerm],
     queryFn: () => fetchSearchResults(searchTerm).then(transformSearchResults),
     staleTime: 1000 * 60 * 5,
   });

@@ -1,0 +1,52 @@
+.song-grid {
+  list-style-type: none;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    position: relative;
+    color: var(--clr-lime);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    &:hover .metadata {
+      transform: translateY(-4px);
+    }
+  }
+
+  .metadata {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    inset: auto 1rem 1rem 1rem;
+    transition: transform 150ms ease-in-out;
+    will-change: translate;
+  }
+
+  .artist {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .album-cover {
+    position: relative;
+    z-index: -1;
+  }
+}
+
+.song-grid--scrapbook {
+  transform: rotate(2deg);
+}

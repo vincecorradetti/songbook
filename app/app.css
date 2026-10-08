@@ -26,18 +26,26 @@
 }
 
 body {
-  padding: 3rem;
   font-family: var(--ff-text);
   font-size: 1.25rem;
   color: var(--clr-lime);
   background-color: var(--clr-brown);
-  background: center / contain repeat url("/grunge-background.png")
-    var(--clr-brown);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 img {
@@ -53,4 +61,15 @@ h5,
 h6 {
   margin-bottom: var(--spacer-4);
   font-family: var(--ff-display);
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }

@@ -1,0 +1,9 @@
+.search {
+  margin-inline: auto;
+
+  input {
+    margin-block: var(--spacer-4) var(--spacer-8);
+    padding: 0.5rem;
+    color: var(--clr-brown);
+  }
+}

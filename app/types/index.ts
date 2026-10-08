@@ -38,3 +38,8 @@ export type Song = {
   longDescription?: string;
   isStreamable?: boolean;
 };
+
+export type SongQueryResponse = {
+  data: Song[] | undefined;
+  isSuccess: boolean;
+};
