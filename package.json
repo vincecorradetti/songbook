@@ -12,11 +12,13 @@
   "dependencies": {
     "@react-router/node": "^8.4.0",
     "@react-router/serve": "^8.4.0",
+    "@reduxjs/toolkit": "^2.13.0",
     "@tanstack/react-query": "^5.104.1",
     "isbot": "^5.1.36",
     "lucide-react": "^1.52.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-redux": "^9.3.0",
     "react-router": "^8.4.0"
   },
   "devDependencies": {

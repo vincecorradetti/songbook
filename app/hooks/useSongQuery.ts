@@ -6,7 +6,11 @@ type SearchResult = {
   results: Song[];
 };
 
-async function fetchSearchResults(searchTerm: string): Promise<SearchResult> {
+async function fetchSearchResults(
+  searchTerm: string | null,
+): Promise<SearchResult> {
+  if (!searchTerm) throw new Error("Search term is missing");
+
   const url = `https://itunes.apple.com/search?term=${searchTerm}&media=music`;
   const response = await fetch(url);
   if (!response.ok) throw new Error("Couldn't fetch songs");
@@ -24,7 +28,7 @@ function transformSearchResults({ results }: SearchResult) {
  * but it's not worth the effort at the moment.
  * See: https://tkdodo.eu/blog/react-query-data-transformations
  */
-export default function useSongQuery(searchTerm: string) {
+export default function useSongQuery(searchTerm: string | null) {
   const { data, isSuccess } = useQuery({
     queryKey: ["songs", searchTerm],
     queryFn: () => fetchSearchResults(searchTerm).then(transformSearchResults),

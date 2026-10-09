@@ -1,13 +1,13 @@
 import type { Route } from "./+types/home";
-import { Home as HomeComponent } from "~/components/Home/Home";
+import { Scrapbook as ScrapbookComponent } from "~/components/Scrapbook/Scrapbook";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Songbook // Social Music Logging" },
-    { name: "description", content: "Log your song!" },
+    { title: "{scrapbook}'s Scrapbook" },
+    { name: "description", content: "{scrapbook} Scrapbook" },
   ];
 }
 
-export default function Home() {
-  return <HomeComponent />;
+export default function Scrapbook() {
+  return <ScrapbookComponent />;
 }

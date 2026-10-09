@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <nav className="navigation--main">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/scrapbook">Scrapbook</NavLink>
+      <NavLink to="/log">Log</NavLink>
     </nav>
   );
 }
